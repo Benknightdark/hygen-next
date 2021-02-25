@@ -1,0 +1,15 @@
+{
+  "name": "hygen-next",
+  "version": "1.0.0",
+  "description": "A hygen package for Next.js",
+  "keywords": [
+    "hygen",
+    "generate",
+    "generator",
+    "nextjs",
+    "next"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/tundera/hygen-next",
+  "license": "MIT"
+}
