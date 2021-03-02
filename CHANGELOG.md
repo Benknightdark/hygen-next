@@ -1,5 +1,11 @@
 # hygen-next
 
+## 0.5.0
+
+### Minor Changes
+
+- fix templates folder
+
 ## 0.4.0
 
 ### Minor Changes
