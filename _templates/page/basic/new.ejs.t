@@ -1,9 +1,9 @@
 ---
 to: pages/<%= name %>.tsx
 ---
-<% formattedPath = h.camelizedPathName(name).replace('/','') -%>
+<% formattedPath = h.inflection.camelize(name, true).replace(/::/g, '/') -%>
 <% pageName = `${formattedPath}Page` -%>
-<% base = h.camelizedBaseName(name) -%>
+<% base = h.path.parse(h.inflection.camelize(name, false)).base -%>
 import type { CustomNextPage as NextPage } from 'types'
 
 import { Flex, Heading } from '@chakra-ui/react'

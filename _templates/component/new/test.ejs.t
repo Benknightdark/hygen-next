@@ -1,7 +1,7 @@
 ---
-to: "<%= location ? `src/components/${location}` : 'src/components' %>/<%= h.camelizedBaseName(name) %>/<%= h.camelizedBaseName(name) %>.test.tsx"
+to: "<%= location ? `src/components/${location}` : 'src/components' %>/<%= h.path.parse(h.inflection.camelize(name, false)).base %>/<%= h.path.parse(h.inflection.camelize(name, false)).base %>.test.tsx"
 ---
-<% component = h.camelizedBaseName(name) -%>
+<% component = h.path.parse(h.inflection.camelize(name, false)).base -%>
 <% formattedPath = location ? `${location}/${component}` : component -%>
 import { render } from 'test/utils'
 

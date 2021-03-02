@@ -1,12 +1,12 @@
 ---
 to: pages/<%= name %>.tsx
 ---
-<% formattedPath = h.camelizedPathName(name).replace('/','') -%>
+<% formattedPath = h.inflection.camelize(name, true).replace(/::/g, '/') -%>
 <% pageName = `${formattedPath}Page` -%>
-<% base = h.camelizedBaseName(name) -%>
+<% base = h.path.parse(h.inflection.camelize(name, false)).base -%>
 <% if (locals.prop) { -%>
-<% pageProps = h.pluralizePageProp(locals.prop) -%>
-<% formattedPageProps = h.camelizedBaseName(pageProps) -%>
+<% pageProps = h.inflection.pluralize(locals.prop) -%>
+<% formattedPageProps = h.path.parse(h.inflection.camelize(pageProps, false)).base -%>
 <% getPageProps = `get${formattedPageProps}` -%>
 <% } -%>
 import type { GetServerSideProps } from 'next'

@@ -1,8 +1,8 @@
 ---
-to: "<%= location ? `src/components/${location}` : 'src/components' %>/<%= h.camelizedBaseName(name) %>/index.tsx"
+to: "<%= location ? `src/components/${location}` : 'src/components' %>/<%= h.path.parse(h.inflection.camelize(name, false)).base %>/index.tsx"
 ---
-<% formattedPath = h.camelizedPathName(name) -%>
-<% component = h.camelizedBaseName(name) -%>
+<% formattedPath = h.inflection.camelize(name, true).replace(/::/g, '/') -%>
+<% component = h.path.parse(h.inflection.camelize(name, false)).base -%>
 import type { FC } from 'react'
 
 // import NextLink from 'next/link'

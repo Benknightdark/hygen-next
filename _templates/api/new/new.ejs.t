@@ -1,7 +1,7 @@
 ---
 to: "<%= location ? `pages/api/${location}` : 'pages/api' %>/<%= name %>.ts"
 ---
-<% route = h.camelizedBaseName(name) -%>
+<% route = h.path.parse(h.inflection.camelize(name, false)).base -%>
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type <%= route %>Data = {
