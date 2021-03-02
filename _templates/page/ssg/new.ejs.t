@@ -14,10 +14,10 @@ import type { CustomNextPage as NextPage } from 'types'
 
 import { Flex, Heading, List, ListItem } from '@chakra-ui/react'
 
-import { getLayout } from '@components/layouts/SiteLayout'
+import { getLayout } from 'src/components/layouts/SiteLayout'
 
 <% if(locals.prop) { -%>
-import { <%= getPageProps %> } from '@lib/data/<%= pageProps %>'
+import { <%= getPageProps %> } from 'src/lib/data/<%= pageProps %>'
 
 interface Props {
   <%= pageProps %>: any
